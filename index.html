@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monteiro Barbershop | Links</title>
+    <title>Monteiro Barbershop | Black Style</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo Geral - Black Style */
+        /* Estilo Geral - Estrito Black Style */
         body {
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a; /* Fundo Preto */
+            background-color: #050505; /* Preto muito profundo */
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -25,78 +25,114 @@
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 420px; /* Um pouco mais largo para presença */
             text-align: center;
         }
 
-        /* Header / Logo */
+        /* Header - Bruto e Impactante */
         header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 4rem;
+            font-family: 'Anton', sans-serif; /* Fonte robusta e condensada */
+            font-size: 5rem; /* Tamanho massivo */
             margin: 0;
-            letter-spacing: 4px;
-            color: #d4af37; /* Um toque de dourado opaco para sofisticação */
+            line-height: 1;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.1); /* Sombra sutil para volume */
         }
 
         p.subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 8px;
-            margin-top: -10px;
-            color: #888;
+            letter-spacing: 12px; /* Muito espaçamento */
+            margin-top: -5px;
+            color: #666; /* Cinza escuro */
+            font-weight: 700;
         }
 
-        /* Botões */
+        /* Botões Modernos e Profissionais */
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px; /* Mais espaço entre botões */
         }
 
         .btn {
             display: block;
-            padding: 18px 20px;
+            padding: 20px;
             text-decoration: none;
             color: #ffffff;
             background-color: transparent;
-            border: 1px solid #333;
-            border-radius: 4px;
-            font-size: 14px;
+            border: 2px solid #333; /* Borda visível mas escura */
+            border-radius: 0px; /* Cantos quadrados "brutos" */
+            font-size: 15px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            transition: all 0.2s ease-in-out; /* Transição rápida e nítida */
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Efeito de Hover */
-        .btn:hover {
+        /* Efeito Moderno de Preenchimento no Hover */
+        .btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
             background-color: #ffffff;
+            transition: all 0.2s ease-in-out;
+            z-index: -1;
+        }
+
+        .btn:hover {
             color: #000000;
             border-color: #ffffff;
-            transform: translateY(-2px);
+            /* Pequeno zoom no hover para agressividade */
+            transform: scale(1.02);
         }
 
-        /* Destaque para o botão de Marcações */
+        .btn:hover::after {
+            height: 100%;
+        }
+
+        /* Botão de Destaque (Marcações) - Invertido */
         .btn-booking {
             background-color: #ffffff;
             color: #000000;
             border-color: #ffffff;
+            z-index: 1;
+        }
+
+        .btn-booking::after {
+            background-color: #111; /* Cor escura no preenchimento do destaque */
         }
 
         .btn-booking:hover {
-            background-color: #d4af37;
-            border-color: #d4af37;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* Linha decorativa fina */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            margin: 40px auto;
         }
 
         /* Footer */
         footer {
             margin-top: 50px;
-            font-size: 0.8rem;
-            color: #444;
+            font-size: 0.75rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -110,24 +146,24 @@
 
         <div class="links-container">
             <a href="https://wa.me/351938362924" target="_blank" class="btn">
-                WhatsApp / Contacto
+                WhatsApp
             </a>
 
             <a href="https://noona.app/monteirobarbershop" target="_blank" class="btn btn-booking">
-                Fazer Marcação
+                Marcações Online
             </a>
 
             <a href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20Alm.%20Jaime%20Afreixo%205%20RC%203870-211%20Murtosa" target="_blank" class="btn">
-                Ver no Mapa / Direções
+                Localização
             </a>
         </div>
 
+        <div class="divider"></div>
+
         <footer>
-            &copy; 2024 Monteiro Barbershop
+            Est. 2024
         </footer>
     </div>
 
 </body>
-
 </html>
-
