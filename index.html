@@ -172,6 +172,8 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
         }
 
         .close-modal {
@@ -182,13 +184,24 @@
             color: #fff;
             cursor: pointer;
             z-index: 10002;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
-        /* Iframe para o PDF */
+        /* Iframe para o PDF ajustado */
         #pdfViewer {
             width: 100%;
             height: 100%;
+            flex-grow: 1;
             border: none;
+            display: block;
+            background: #fff; /* Fundo branco para o visualizador do Google não ficar estranho a carregar */
         }
 
         @media (max-height: 650px) {
@@ -263,8 +276,8 @@
 
     <div id="modalHorario" class="modal-overlay" onclick="fecharHorario()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-modal" onclick="fecharHorario()">&times;</span>
-            <iframe id="pdfViewer" src="https://monteirobarbershop.github.io/contacts/HORARIO-MONTEIRO.pdf"></iframe>
+            <span class="close-modal" onclick="fecharHorario()">×</span>
+            <iframe id="pdfViewer" src="https://docs.google.com/gview?url=https://monteirobarbershop.github.io/contacts/HORARIO-MONTEIRO.pdf&embedded=true"></iframe>
         </div>
     </div>
 
