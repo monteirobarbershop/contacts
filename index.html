@@ -151,7 +151,7 @@
 
         /* --- ESTILOS DO POPUP (MODAL) CORRIGIDOS --- */
         .modal-overlay {
-            display: none; /* Escondido por padrão */
+            display: none; 
             position: fixed;
             z-index: 10000;
             left: 0;
@@ -165,26 +165,27 @@
         .modal-content {
             position: relative;
             margin: 5vh auto;
-            width: 90%;
+            width: 95%; /* Ligeiramente mais largo para aproveitar o ecrã */
             height: 85vh;
             max-width: 600px;
-            background: #000;
+            background: transparent; /* Fundo transparente para não criar bordas cinzentas */
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #333;
+            border: none; /* Remoção da linha escura em volta */
             display: flex;
             flex-direction: column;
+            -webkit-overflow-scrolling: touch;
         }
 
         .close-modal {
             position: absolute;
             top: 10px;
-            right: 20px;
-            font-size: 40px;
+            right: 15px;
+            font-size: 35px;
             color: #fff;
             cursor: pointer;
             z-index: 10002;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -192,16 +193,18 @@
             align-items: center;
             justify-content: center;
             line-height: 1;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* Iframe para o PDF ajustado */
+        /* Iframe ajustado sem formatações extra */
         #pdfViewer {
             width: 100%;
             height: 100%;
             flex-grow: 1;
             border: none;
             display: block;
-            background: #fff; /* Fundo branco para o visualizador do Google não ficar estranho a carregar */
+            background-color: transparent;
+            object-fit: contain;
         }
 
         @media (max-height: 650px) {
@@ -277,7 +280,7 @@
     <div id="modalHorario" class="modal-overlay" onclick="fecharHorario()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="fecharHorario()">×</span>
-            <iframe id="pdfViewer" src="https://docs.google.com/gview?url=https://monteirobarbershop.github.io/contacts/HORARIO-MONTEIRO.pdf&embedded=true"></iframe>
+            <iframe id="pdfViewer" src="https://monteirobarbershop.github.io/contacts/HORARIO-MONTEIRO.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit"></iframe>
         </div>
     </div>
 
