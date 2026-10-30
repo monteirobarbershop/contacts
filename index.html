@@ -196,7 +196,7 @@
         }
 
         /* Imagem do Horário */
-        #imgViewer {
+        #imgViewer, #imgPrecos {
             width: 100%;
             height: auto;
             max-height: 85vh; /* Garante que não sai do ecrã em telemóveis pequenos */
@@ -265,6 +265,13 @@
                     <p class="item-subtitle">Horário da BarberShop</p>
                 </div>
             </a>
+
+            <a href="javascript:void(0);" class="link-item" onclick="abrirPrecos()">
+                <div class="item-main-text">
+                    <h2 class="item-title">PREÇÁRIO</h2>
+                    <p class="item-subtitle">Tabela de preços da BarberShop</p>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -283,6 +290,13 @@
         </div>
     </div>
 
+    <div id="modalPrecos" class="modal-overlay" onclick="fecharPrecos()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="fecharPrecos()">×</span>
+            <img id="imgPrecos" src="https://monteirobarbershop.github.io/contacts/PRECOS.webp" alt="Preçário da Barbershop">
+        </div>
+    </div>
+
     <script>
         // Funções do Popup
         function abrirHorario() {
@@ -291,6 +305,13 @@
         }
         function fecharHorario() {
             document.getElementById("modalHorario").style.display = "none";
+        }
+
+        function abrirPrecos() {
+            document.getElementById("modalPrecos").style.display = "flex";
+        }
+        function fecharPrecos() {
+            document.getElementById("modalPrecos").style.display = "none";
         }
 
         // Animações de toque para todos os links
